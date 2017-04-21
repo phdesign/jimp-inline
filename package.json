@@ -1,0 +1,19 @@
+{
+  "name": "jimp-inline",
+  "version": "1.0.0",
+  "description": "Creates an inline version of jimp that can be placed in a nodejs file and is assigned to variable `Jimp`.",
+  "main": "jimp.min.js",
+  "scripts": {
+    "build": "webpack --target=node --output-library=Jimp node_modules/jimp/index.js jimp.js",
+    "uglify": "uglifyjs -o jimp.min.js jimp.js",
+    "start": "npm run build && npm run uglify"
+  },
+  "keywords": ["jimp"],
+  "author": "Paul Heasley <paul@phdesign.com.au>",
+  "license": "MIT",
+  "dependencies": {
+    "jimp": "^0.2.27",
+    "uglifyjs": "^2.4.10",
+    "webpack": "^2.4.1"
+  }
+}
